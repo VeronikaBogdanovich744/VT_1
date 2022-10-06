@@ -13,16 +13,16 @@ public class Task15 {
         ArrayList<Book> books = new ArrayList<Book>();
 
         var book1 = new Book();
-        book1.createValues("abc", "678", 1);
-        book1.price = 5;
+        book1.createValues("abc", "678", 1,5);
+        //book1.price = 5;
 
         var book2 = new Book();
-        book2.createValues("cde", "456", 2);
-        book2.price = 4;
+        book2.createValues("cde", "456", 2,4);
+        //book2.price = 4;
 
         var book3 = new Book();
-        book3.createValues("bcd", "123", 3);
-        book3.price = 3;
+        book3.createValues("bcd", "123", 3,3);
+        //book3.price = 3;
 
         books.add(book1);
         books.add(book2);
@@ -52,8 +52,8 @@ public class Task15 {
         System.out.println("Author->Title sorting:");
 
         var book4 = new Book();
-        book4.createValues("cde", "123", 4);
-        book4.price = 3;
+        book4.createValues("cde", "123", 4,3);
+       // book4.price = 3;
 
         books.add(book4);
 
@@ -83,7 +83,7 @@ class BookPriceComparator implements Comparator<Book>{
 
     @Override
     public int compare(Book o1, Book o2) {
-        return Integer.compare(o1.price, o1.price);
+        return Integer.compare(o1.GetPrice(), o1.GetPrice());
     }
 }
 
@@ -92,9 +92,9 @@ class BookTitleAuthorComparator implements Comparator<Book>{
     @Override
     public int compare(Book o1, Book o2) {
 
-        int result = StringComparator.compare(o1.title,o2.title);
+        int result = StringComparator.compare(o1.GetTitle(),o2.GetTitle());
         if (result==0)
-            result = StringComparator.compare(o1.author,o2.author);
+            result = StringComparator.compare(o1.GetAuthor(),o2.GetAuthor());
 
         return result;
     }

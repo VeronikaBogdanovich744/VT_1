@@ -43,8 +43,8 @@ public class Task13 {
 
             ProgrammerBook object = (ProgrammerBook)obj;
 
-            if(object.title.equals(this.title) && object.author.equals(this.author) &&
-                    object.price==this.price && object.edition==this.edition
+            if(object.GetTitle().equals(this.GetTitle()) && object.GetAuthor().equals(this.GetAuthor()) &&
+                    object.GetPrice()==this.GetPrice() && object.GetEdition()==this.GetEdition()
                     && object.language.equals(this.language) && object.level==this.level)
                 return true;
 
@@ -54,10 +54,10 @@ public class Task13 {
         @Override
         public int hashCode() {
             int result = 17;
-            result = 31 * result + ((title == null) ? 0 :title.hashCode());
-            result = 31 * result + ((author == null) ? 0 :author.hashCode());
-            result = 31 * result + price;
-            result = 31 * result + Book.edition;
+            result = 31 * result + ((GetTitle() == null) ? 0 :GetTitle().hashCode());
+            result = 31 * result + ((GetAuthor() == null) ? 0 :GetAuthor().hashCode());
+            result = 31 * result + GetPrice();
+            result = 31 * result + GetEdition();
             result = 31 * result +  ((language == null) ? 0 :language.hashCode());
             result = 31 * result + level;
             return result;
@@ -65,10 +65,10 @@ public class Task13 {
 
         @Override
         public String toString() {
-            String result = "Title: " + title.toString() +"\n";
-            result+= "Author: " + author.toString() +"\n";
-            result+= "Price: " + price +"\n";
-            result+= "Edition: " + Book.edition +"\n";
+            String result = "Title: " + GetTitle().toString() +"\n";
+            result+= "Author: " + GetAuthor().toString() +"\n";
+            result+= "Price: " + GetPrice() +"\n";
+            result+= "Edition: " + GetEdition() +"\n";
             result+= "Language: " + language +"\n";
             result+= "Level: " + level +"\n";
             return result;

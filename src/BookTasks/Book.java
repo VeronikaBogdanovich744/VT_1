@@ -1,11 +1,25 @@
 package BookTasks;
 
 public class Book implements Comparable<Book> {
-    protected String title;
-    protected String author;
-    protected int price;
-    protected static int edition;
+    private String title;
+    public String GetTitle(){
+        return title;
+    }
 
+    private String author;
+
+    public String GetAuthor(){
+        return author;
+    }
+    private int price;
+
+    public int GetPrice(){
+        return price;
+    }
+    private int edition;
+    public int GetEdition(){
+        return edition;
+    }
     public int isbn;
 
     public void createValues(String title,String author,int isbn){
@@ -14,6 +28,10 @@ public class Book implements Comparable<Book> {
         this.isbn = isbn;
     }
 
+    public void createValues(String title,String author,int isbn,int price){
+        createValues(title,author,isbn);
+        this.price = price;
+    }
 
     @Override
     public boolean equals(Object obj) {
